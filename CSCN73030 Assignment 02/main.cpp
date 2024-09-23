@@ -41,5 +41,12 @@ int main() {
     // Parse the student data from the file
     std::vector<studentData> students = parseStudentData(filename);
 
+#ifdef _DEBUG
+    // Output the student data in Debug mode only
+    for (const auto& student : students) {
+        std::cout << "First Name: " << student.firstName << ", Last Name: " << student.lastName << std::endl;
+    }
+#endif
+
 	return 1;
 }
